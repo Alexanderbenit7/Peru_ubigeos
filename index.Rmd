@@ -1,0 +1,55 @@
+---
+title: "Tabla de Equivalencias para UBIGEOS: RENIEC-INEI"
+author: "José Incio"
+date: "21 de mayo de 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Introducción 
+
+Este documento busca ser una herramienta que tiene como finalidad ayudar a los investigadores que necesiten organizar información de las unidades subnacionales peruanas. La organización política del territorio nacional se compone de: regiones/departamentos, provincias, distritos y centros poblados. Para cada una de estas entidades se le asigna un "UBIGEO" (código de ubicación geográfica). 
+
+Para el caso de los departamentos, provincias y distritos existen dos instituciones que asignan los UBIGEOS: RENIEC (Registor Nacional de Identificación y Estado Civil) e INEI (Instituto Nacional de Estadística e Informática). RENIEC no asigna el UBIEGO a los centros poblados. 
+
+La mayoría de instituciones del Estado peruano utilizan el UBIGEO asignado por el INEI, sin embargo las instituciones que utilizan el UBIGEO generado por RENIEC como la ONPE (Oficina de Procesos electorales) y elJNE (Jurado Nacional de Elecciones) producen información importante para el análisis sociopolítico. 
+
+El que dos instituciones generen UBIGEO genera un problema de consistencia, ya que en la mayoría de casos los ubigeos no coinciden, por lo que al momento de trabajar con fuentes que utilizan UBIGEOS distintos a la misma entidad geográfica complica el trabajo de la organización y análisis de información. 
+
+Es decir que si se quiere organizar, para el nivel distrital,  información económica que provee el MEF o datos censales que provee el INEI con información de resultados electorales de la ONPE o del JNE esta labor se hace muy complicada ya que el UBIGEO no sirve como llave para organizar la información.La alternativa es crear una llave utilizando la combinación del nombre de la provincia con el distrito. Sin embargo, los nombres tampoco están estandarizados, el problema surge con las tildes, los nombres que contienen caracteres como la ñ, o nombres compuestos etc. En resumen, crear una llave en base a los nombres no es eficiente. 
+
+En este repositorio, encontraran una tabla de equivalencias de los ubigeos del INEI y de RENIEC. La finalidad de este repositorio es que facilite la organización y el trabajo con información que proviene de distintos sectores en Perú. 
+
+La tabla consiste en los siguientes campos. 
+
+- UBIGEO_RENIEC: Ubigeo asignado por el RENIEC. 
+- UBIGEO_INEI: ubigeo asignado por INEI. 
+- Departamento: Nombre del departamento.
+- Provincia: Nombre de la provincia.
+- Distrito_reniec: Nombre del distrito asignado por RENIEC.
+- Distrito_INEI: Nombre del distrito asignado por INEI. 
+
+
+La forma de escribir los nombres de los distritos por parte de RENIEC e INEI en algunos casos son ligeramente distintas. 
+
+Para acceder a la tabla seleccione la imagen.: 
+
+<a href="https://goo.gl/HlO9O2" rel="some text">![](tabal1.png)</a>
+
+
+La tabla contiene la equivalencia de los ubigeos para 1859 distritos. No están incluidos los 8 distritos nuevos creados después de Noviembre del 2015. La lista de distritos nuevos está en la hoja <a href="https://goo.gl/4u9iS5" rel="some text">"distritosnuevos.xlsx"</a>
+
+
+Nota: Reniec en su web http://portales.reniec.gob.pe/web/estadistica/estadisticas tiene una hoja de los electores que podría servir como tabla de equivalencias, después de un trabajo de limpieza. Sin embargo , he encontrado errores ya que asigna UBIGEOS de INEI errados en distritos de Huancavelica y Huanuco. 
+
+#ANEXOS. 
+
+a) Tabla de Equivalencias: "tablaequivalenciasJI.xlsx" : https://goo.gl/HlO9O2
+b) Distritos nuevos: "distritosnuevos.xlsx": https://goo.gl/4u9iS5
+
+Si vas a utilizar esta tabla por favor cita el repositorio de la siguiente forma: 
+
+Incio, José, "Tabla de Equivalencias para UBIGEOS: RENIEC-INEI", (2016), GitHub repository, http://jincio.github.io/Peru_ubigeos/
